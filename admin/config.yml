@@ -1,0 +1,164 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Media files stored in repo
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+# Site URL
+site_url: https://makeup-artist.com
+display_url: https://makeup-artist.com
+
+# Editorial workflow for draft/review/publish
+publish_mode: editorial_workflow
+
+collections:
+  # Editorial Collection
+  - name: "editorial"
+    label: "Editorial"
+    folder: "_data/editorial"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    extension: "json"
+    format: "json"
+    fields:
+      - label: "Image"
+        name: "image"
+        widget: "image"
+        required: true
+        media_library:
+          config:
+            multiple: false
+      - label: "Alt Text"
+        name: "alt"
+        widget: "string"
+        required: false
+        default: "Editorial makeup look by Anastasia Rose"
+      - label: "Order"
+        name: "order"
+        widget: "number"
+        required: false
+        default: 0
+        hint: "Lower numbers appear first in the gallery"
+
+  # Beauty Collection
+  - name: "beauty"
+    label: "Beauty"
+    folder: "_data/beauty"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    extension: "json"
+    format: "json"
+    fields:
+      - label: "Image"
+        name: "image"
+        widget: "image"
+        required: true
+      - label: "Alt Text"
+        name: "alt"
+        widget: "string"
+        required: false
+        default: "Beauty makeup look by Anastasia Rose"
+      - label: "Order"
+        name: "order"
+        widget: "number"
+        required: false
+        default: 0
+        hint: "Lower numbers appear first in the gallery"
+
+  # Hair Campaigns Collection
+  - name: "hair-campaigns"
+    label: "Hair Campaigns"
+    folder: "_data/hair-campaigns"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    extension: "json"
+    format: "json"
+    fields:
+      - label: "Image"
+        name: "image"
+        widget: "image"
+        required: true
+      - label: "Alt Text"
+        name: "alt"
+        widget: "string"
+        required: false
+        default: "Hair campaign look by Anastasia Rose"
+      - label: "Order"
+        name: "order"
+        widget: "number"
+        required: false
+        default: 0
+        hint: "Lower numbers appear first in the gallery"
+
+  # Fashion Week Collection
+  - name: "fashion-week"
+    label: "Fashion Week"
+    folder: "_data/fashion-week"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    extension: "json"
+    format: "json"
+    fields:
+      - label: "Image"
+        name: "image"
+        widget: "image"
+        required: true
+      - label: "Alt Text"
+        name: "alt"
+        widget: "string"
+        required: false
+        default: "Fashion week look by Anastasia Rose"
+      - label: "Order"
+        name: "order"
+        widget: "number"
+        required: false
+        default: 0
+        hint: "Lower numbers appear first in the gallery"
+
+  # Bridal Collection
+  - name: "bridal"
+    label: "Bridal"
+    folder: "_data/bridal"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    extension: "json"
+    format: "json"
+    fields:
+      - label: "Image"
+        name: "image"
+        widget: "image"
+        required: true
+      - label: "Alt Text"
+        name: "alt"
+        widget: "string"
+        required: false
+        default: "Bridal makeup look by Anastasia Rose"
+      - label: "Order"
+        name: "order"
+        widget: "number"
+        required: false
+        default: 0
+        hint: "Lower numbers appear first in the gallery"
+
+  # Site Settings
+  - name: "settings"
+    label: "Settings"
+    files:
+      - name: "contact"
+        label: "Contact Information"
+        file: "_data/settings/contact.json"
+        fields:
+          - label: "Email"
+            name: "email"
+            widget: "string"
+            default: "anastasia@makeup-artist.com"
+          - label: "Instagram Handle"
+            name: "instagram"
+            widget: "string"
+            default: "@anastasiarose_mua"
+          - label: "Phone"
+            name: "phone"
+            widget: "string"
+            required: false

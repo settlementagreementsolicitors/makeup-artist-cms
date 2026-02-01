@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Anastasia Rose - Makeup Artist specialising in fashion, beauty, celebrity and editorial work.">
+    <title>ANASTASIA ROSE | Makeup Artist</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- Netlify Identity Widget for CMS authentication -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #ffffff;
+            color: #000000;
+        }
+
+        /* Header */
+        header {
+            background: #ffffff;
+            padding: 30px 40px;
+            border-bottom: 1px solid #e8e8e8;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 22px;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+            color: #000000;
+        }
+
+        nav {
+            display: flex;
+            gap: 35px;
+            align-items: center;
+        }
+
+        nav a {
+            font-size: 13px;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+            color: #000000;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #666666;
+        }
+
+        nav a.active {
+            border-bottom: 1px solid #000000;
+        }
+
+        .instagram-icon {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 40px 80px;
+        }
+
+        /* Portfolio Grid */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .portfolio-item {
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            background: #f5f5f5;
+            aspect-ratio: 3/4;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Loading state */
+        .portfolio-grid.loading {
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .portfolio-grid.loading::after {
+            content: "Loading...";
+            font-size: 14px;
+            color: #999;
+        }
+
+        /* Empty state */
+        .empty-message {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 80px 20px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* About Page */
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+            margin-top: 40px;
+        }
+
+        .about-image {
+            width: 100%;
+            height: auto;
+        }
+
+        .about-text h1 {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 36px;
+            font-weight: 400;
+            margin-bottom: 30px;
+            letter-spacing: 0.5px;
+        }
+
+        .about-text p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #333333;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #e8e8e8;
+        }
+
+        .contact-info h2 {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 24px;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .contact-info a {
+            color: #000000;
+            text-decoration: none;
+            border-bottom: 1px solid #000000;
+        }
+
+        .contact-info a:hover {
+            color: #666666;
+            border-bottom-color: #666666;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 90vh;
+            object-fit: contain;
+            display: block;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 40px;
+            color: #000000;
+            cursor: pointer;
+            background: none;
+            border: none;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.3s ease;
+            z-index: 10000;
+        }
+
+        .lightbox-close:hover {
+            color: #666666;
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 60px;
+            color: #000000;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 20px;
+            transition: color 0.3s ease;
+            z-index: 10000;
+        }
+
+        .lightbox-nav:hover {
+            color: #666666;
+        }
+
+        .lightbox-prev {
+            left: 20px;
+        }
+
+        .lightbox-next {
+            right: 20px;
+        }
+
+        /* Page visibility */
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .portfolio-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 20px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav {
+                gap: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
+
+            main {
+                padding: 30px 20px;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+
+            .lightbox-nav {
+                font-size: 40px;
+                padding: 10px;
+            }
+
+            .lightbox-close {
+                font-size: 30px;
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="#" class="logo" onclick="showPage('editorial'); return false;">ANASTASIA ROSE | Makeup Artist</a>
+            <nav>
+                <a href="#" data-page="editorial" onclick="showPage('editorial'); return false;">Editorial</a>
+                <a href="#" data-page="beauty" onclick="showPage('beauty'); return false;">Beauty</a>
+                <a href="#" data-page="hair-campaigns" onclick="showPage('hair-campaigns'); return false;">Hair Campaigns</a>
+                <a href="#" data-page="fashion-week" onclick="showPage('fashion-week'); return false;">Fashion Week</a>
+                <a href="#" data-page="bridal" onclick="showPage('bridal'); return false;">Bridal</a>
+                <a href="#" data-page="about" onclick="showPage('about'); return false;">About</a>
+                <a href="#" data-page="contact" onclick="showPage('contact'); return false;">Contact</a>
+                <a href="https://instagram.com/anastasiarose_mua" target="_blank" rel="noopener noreferrer">
+                    <svg class="instagram-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Editorial Page (Default) -->
+        <div id="editorial" class="page active">
+            <div class="portfolio-grid loading" id="editorial-grid"></div>
+        </div>
+
+        <!-- Beauty Page -->
+        <div id="beauty" class="page">
+            <div class="portfolio-grid loading" id="beauty-grid"></div>
+        </div>
+
+        <!-- Hair Campaigns Page -->
+        <div id="hair-campaigns" class="page">
+            <div class="portfolio-grid loading" id="hair-campaigns-grid"></div>
+        </div>
+
+        <!-- Fashion Week Page -->
+        <div id="fashion-week" class="page">
+            <div class="portfolio-grid loading" id="fashion-week-grid"></div>
+        </div>
+
+        <!-- Bridal Page -->
+        <div id="bridal" class="page">
+            <div class="portfolio-grid loading" id="bridal-grid"></div>
+        </div>
+
+        <!-- About Page -->
+        <div id="about" class="page">
+            <div class="about-container">
+                <div>
+                    <img src="images/anastasia-photo.jpg" alt="Anastasia Rose" class="about-image">
+                </div>
+                <div class="about-text">
+                    <h1>About</h1>
+                    <p>Anastasia Rose is a London-based makeup artist specialising in fashion, beauty, celebrity and editorial work. She is known for her refined skin, clean beauty and high-impact creative looks, across all skin tones.</p>
+                    <p>With experience backstage at Fashion Week, Anastasia has worked with the AOFM Pro Team at London Fashion Week and Milan Fashion Week. Graduate of AOFM Pro Artist Training Programme.</p>
+                    <p>Trusted by agencies and clients. Available worldwide.</p>
+
+                    <div class="contact-info">
+                        <h2>Get in Touch</h2>
+                        <p>For bookings and enquiries:</p>
+                        <p>Email: <a href="mailto:anastasia@makeup-artist.com">anastasia@makeup-artist.com</a></p>
+                        <p>Instagram: <a href="https://instagram.com/anastasiarose_mua" target="_blank">@anastasiarose_mua</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Page -->
+        <div id="contact" class="page">
+            <div class="about-container">
+                <div class="about-text">
+                    <h1>Contact</h1>
+                    <p>Available for editorial, fashion week, beauty campaigns, and creative collaborations.</p>
+
+                    <div class="contact-info" style="margin-top: 60px;">
+                        <h2>Get in Touch</h2>
+                        <p>Email: <a href="mailto:anastasia@makeup-artist.com">anastasia@makeup-artist.com</a></p>
+                        <p>Instagram: <a href="https://instagram.com/anastasiarose_mua" target="_blank">@anastasiarose_mua</a></p>
+                        <p style="margin-top: 30px;">London & Worldwide</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <button class="lightbox-nav lightbox-prev" onclick="navigateImage(-1)">&#8249;</button>
+        <button class="lightbox-nav lightbox-next" onclick="navigateImage(1)">&#8250;</button>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="">
+        </div>
+    </div>
+
+    <script>
+        // Portfolio data cache
+        const portfolioCache = {};
+        let currentImages = [];
+        let currentIndex = 0;
+
+        // Category to folder mapping
+        const categories = {
+            'editorial': '_data/editorial',
+            'beauty': '_data/beauty',
+            'hair-campaigns': '_data/hair-campaigns',
+            'fashion-week': '_data/fashion-week',
+            'bridal': '_data/bridal'
+        };
+
+        // Load images for a category from CMS JSON files
+        async function loadCategoryImages(category) {
+            if (portfolioCache[category]) {
+                return portfolioCache[category];
+            }
+
+            const folder = categories[category];
+            const images = [];
+
+            try {
+                // Fetch the list of JSON files in the category folder
+                // In production, we'll need to generate an index file or use a build step
+                // For now, we try to fetch individual files
+                const response = await fetch(`/${folder}/`);
+
+                if (!response.ok) {
+                    // Fallback: try to load from a generated index
+                    const indexResponse = await fetch(`/${folder}/index.json`);
+                    if (indexResponse.ok) {
+                        const data = await indexResponse.json();
+                        portfolioCache[category] = data.images || [];
+                        return portfolioCache[category];
+                    }
+                    return [];
+                }
+
+                // Parse directory listing (this won't work on most static hosts)
+                // The proper solution is to generate an index during build
+                return [];
+            } catch (error) {
+                console.log(`Loading ${category} from individual files...`);
+
+                // Try loading a pre-built index file
+                try {
+                    const indexResponse = await fetch(`/_data/${category}-index.json`);
+                    if (indexResponse.ok) {
+                        const data = await indexResponse.json();
+                        portfolioCache[category] = data;
+                        return data;
+                    }
+                } catch (e) {
+                    // Index doesn't exist yet
+                }
+
+                return [];
+            }
+        }
+
+        // Render a portfolio grid
+        async function renderGrid(category) {
+            const gridId = `${category}-grid`;
+            const grid = document.getElementById(gridId);
+
+            if (!grid) return;
+
+            // Show loading state
+            grid.classList.add('loading');
+            grid.innerHTML = '';
+
+            // Load images
+            const images = await loadCategoryImages(category);
+
+            // Remove loading state
+            grid.classList.remove('loading');
+
+            if (images.length === 0) {
+                // Show empty state with helpful message
+                grid.innerHTML = `
+                    <div class="empty-message">
+                        <p>No images yet.</p>
+                        <p style="margin-top: 10px; font-size: 12px;">
+                            <a href="/admin/" style="color: #666;">Log in to admin</a> to add ${category} photos.
+                        </p>
+                    </div>
+                `;
+                return;
+            }
+
+            // Sort by order field
+            images.sort((a, b) => (a.order || 0) - (b.order || 0));
+
+            // Render images
+            images.forEach((img, index) => {
+                const item = document.createElement('div');
+                item.className = 'portfolio-item';
+
+                // Handle both CMS-uploaded images and external URLs
+                const imagePath = img.image.startsWith('http') ? img.image : img.image;
+
+                item.innerHTML = `<img src="${imagePath}" alt="${img.alt || 'Makeup work by Anastasia Rose'}" loading="lazy">`;
+                item.onclick = () => openLightbox(images, index);
+                grid.appendChild(item);
+            });
+        }
+
+        // Page navigation
+        function showPage(pageName) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+
+            // Remove active class from nav links
+            document.querySelectorAll('nav a[data-page]').forEach(link => {
+                link.classList.remove('active');
+            });
+
+            // Show selected page
+            const page = document.getElementById(pageName);
+            if (page) {
+                page.classList.add('active');
+            }
+
+            // Add active class to nav link
+            const navLink = document.querySelector(`nav a[data-page="${pageName}"]`);
+            if (navLink) {
+                navLink.classList.add('active');
+            }
+
+            // Load images if it's a portfolio page
+            if (categories[pageName]) {
+                renderGrid(pageName);
+            }
+
+            window.scrollTo(0, 0);
+        }
+
+        // Lightbox functions
+        function openLightbox(images, index) {
+            currentImages = images;
+            currentIndex = index;
+
+            const img = images[index];
+            const imagePath = img.image.startsWith('http') ? img.image : img.image;
+
+            document.getElementById('lightbox-img').src = imagePath;
+            document.getElementById('lightbox-img').alt = img.alt || 'Makeup work by Anastasia Rose';
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function navigateImage(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = currentImages.length - 1;
+            if (currentIndex >= currentImages.length) currentIndex = 0;
+
+            const img = currentImages[currentIndex];
+            const imagePath = img.image.startsWith('http') ? img.image : img.image;
+
+            document.getElementById('lightbox-img').src = imagePath;
+            document.getElementById('lightbox-img').alt = img.alt || 'Makeup work by Anastasia Rose';
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (document.getElementById('lightbox').classList.contains('active')) {
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') navigateImage(-1);
+                if (e.key === 'ArrowRight') navigateImage(1);
+            }
+        });
+
+        // Close lightbox on background click
+        document.getElementById('lightbox').addEventListener('click', (e) => {
+            if (e.target.id === 'lightbox') {
+                closeLightbox();
+            }
+        });
+
+        // Netlify Identity redirect after login
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                    window.netlifyIdentity.on("login", () => {
+                        document.location.href = "/admin/";
+                    });
+                }
+            });
+        }
+
+        // Initialize - load editorial by default
+        document.addEventListener('DOMContentLoaded', () => {
+            showPage('editorial');
+        });
+    </script>
+</body>
+</html>

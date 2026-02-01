@@ -1,0 +1,20 @@
+[
+  {
+    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/3c2ce856-6d08-4ed0-b64c-bced2c1a5063/110_web.jpg?format=1500w",
+    "alt": "Fashion Week backstage",
+    "order": 1,
+    "file": "001-fw-backstage.json"
+  },
+  {
+    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/fd003b00-baaf-4a9c-97e7-da34ab671480/_82A2011.jpg?format=1500w",
+    "alt": "Fashion Week runway look",
+    "order": 2,
+    "file": "002-fw-runway.json"
+  },
+  {
+    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/1757690369213-B3C9V0WO0F9JJE55CA6R/IMG_1160.jpg?format=1500w",
+    "alt": "London Fashion Week",
+    "order": 3,
+    "file": "003-fw-lfw.json"
+  }
+]

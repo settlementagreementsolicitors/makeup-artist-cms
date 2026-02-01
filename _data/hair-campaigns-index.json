@@ -1,0 +1,20 @@
+[
+  {
+    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/8efb25a2-a370-49e8-8d5c-435709eaa6d2/1.png?format=1500w",
+    "alt": "Hair campaign editorial",
+    "order": 1,
+    "file": "001-hair-editorial.json"
+  },
+  {
+    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/1757600088785-OO3YISADA6D5UPM05A0E/000053.jpg?format=1500w",
+    "alt": "Hair campaign studio shot",
+    "order": 2,
+    "file": "002-hair-studio.json"
+  },
+  {
+    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/3b8164f6-0546-4686-8d42-ef3b483e327f/8_web.jpg?format=1500w",
+    "alt": "Creative hair campaign",
+    "order": 3,
+    "file": "003-hair-creative.json"
+  }
+]

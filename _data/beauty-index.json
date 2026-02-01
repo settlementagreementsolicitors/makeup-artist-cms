@@ -1,0 +1,26 @@
+[
+  {
+    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/67b5e174-6484-47e5-a8ef-35b161258520/Vanguard+%2337+vol.11+c.jpg?format=1500w",
+    "alt": "Clean beauty makeup look",
+    "order": 1,
+    "file": "001-beauty-clean.json"
+  },
+  {
+    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/4a69e102-faba-420f-b277-995f5a333435/IMG_6897.jpg?format=1500w",
+    "alt": "Natural beauty makeup",
+    "order": 2,
+    "file": "002-beauty-natural.json"
+  },
+  {
+    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/21705e65-1ffb-434b-bc4c-02b59e1abe2b/IMG_5452.jpg?format=1500w",
+    "alt": "Glamour beauty makeup",
+    "order": 3,
+    "file": "003-beauty-glam.json"
+  },
+  {
+    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/24602d0c-331e-4ad8-a475-eaf43118bf37/1550297-R1-13-14A.jpg?format=1500w",
+    "alt": "Film beauty makeup",
+    "order": 4,
+    "file": "004-beauty-film.json"
+  }
+]
