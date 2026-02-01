@@ -1,20 +1,50 @@
 [
   {
-    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/2c701ea5-deeb-4d24-8624-ebeb5f59bab5/IMG_6572.jpg?format=1500w",
-    "alt": "Classic bridal makeup",
+    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/d3b8003a-155a-4921-93cd-79757994dabf/IMG_7949.jpeg?format=1500w",
+    "alt": "Bridal makeup look by Anastasia Rose",
     "order": 1,
-    "file": "001-bridal-classic.json"
+    "file": "001-image.json"
   },
   {
-    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/3dfcb13e-68fe-45c7-b75f-808c169c334c/_82A2098+.jpg?format=1500w",
-    "alt": "Romantic bridal makeup",
+    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/a3d97b07-46b1-418f-bb28-020ac2736104/WEB+ELENA_3.jpg?format=1500w",
+    "alt": "Bridal makeup look by Anastasia Rose",
     "order": 2,
-    "file": "002-bridal-romantic.json"
+    "file": "002-image.json"
   },
   {
-    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/b6d1952e-df3d-4c13-ae6d-e34b3e957861/R1-4A.jpg?format=1500w",
-    "alt": "Natural bridal makeup",
+    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/fb59a388-2035-4332-bdba-6ee5a51a2198/Maryanne+030.jpg?format=1500w",
+    "alt": "Bridal makeup look by Anastasia Rose",
     "order": 3,
-    "file": "003-bridal-natural.json"
+    "file": "003-image.json"
+  },
+  {
+    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/1b8e2b20-6621-4141-a422-38936a338877/1552297-R1-33-34A.jpg?format=1500w",
+    "alt": "Bridal makeup look by Anastasia Rose",
+    "order": 4,
+    "file": "004-image.json"
+  },
+  {
+    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/73392087-6c48-4943-a91d-1626c23c10d0/1550297-R1-27-28A.jpg?format=1500w",
+    "alt": "Bridal makeup look by Anastasia Rose",
+    "order": 5,
+    "file": "005-image.json"
+  },
+  {
+    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/aca09dee-9e66-4ff3-afff-29e1c38be1a3/_82A1881.jpg?format=1500w",
+    "alt": "Bridal makeup look by Anastasia Rose",
+    "order": 6,
+    "file": "006-image.json"
+  },
+  {
+    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/1768318564769-N8L1HBKKSSG78FWCSTKC/IMG_1106.jpg?format=1500w",
+    "alt": "Bridal makeup look by Anastasia Rose",
+    "order": 7,
+    "file": "007-image.json"
+  },
+  {
+    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/c1cceb01-cb85-4b00-b9ab-13b79dd6c842/IMG_1624.jpg?format=1500w",
+    "alt": "Bridal makeup look by Anastasia Rose",
+    "order": 8,
+    "file": "008-image.json"
   }
 ]

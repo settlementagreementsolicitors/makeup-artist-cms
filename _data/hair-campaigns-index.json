@@ -1,20 +1,74 @@
 [
   {
-    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/8efb25a2-a370-49e8-8d5c-435709eaa6d2/1.png?format=1500w",
-    "alt": "Hair campaign editorial",
+    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/fd003b00-baaf-4a9c-97e7-da34ab671480/_82A2011.jpg?format=1500w",
+    "alt": "Hair campaign look by Anastasia Rose",
     "order": 1,
-    "file": "001-hair-editorial.json"
+    "file": "001-image.json"
   },
   {
-    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/1757600088785-OO3YISADA6D5UPM05A0E/000053.jpg?format=1500w",
-    "alt": "Hair campaign studio shot",
+    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/1757690369213-B3C9V0WO0F9JJE55CA6R/IMG_1160.jpg?format=1500w",
+    "alt": "Hair campaign look by Anastasia Rose",
     "order": 2,
-    "file": "002-hair-studio.json"
+    "file": "002-image.json"
   },
   {
-    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/3b8164f6-0546-4686-8d42-ef3b483e327f/8_web.jpg?format=1500w",
-    "alt": "Creative hair campaign",
+    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/2c701ea5-deeb-4d24-8624-ebeb5f59bab5/IMG_6572.jpg?format=1500w",
+    "alt": "Hair campaign look by Anastasia Rose",
     "order": 3,
-    "file": "003-hair-creative.json"
+    "file": "003-image.json"
+  },
+  {
+    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/3dfcb13e-68fe-45c7-b75f-808c169c334c/_82A2098+.jpg?format=1500w",
+    "alt": "Hair campaign look by Anastasia Rose",
+    "order": 4,
+    "file": "004-image.json"
+  },
+  {
+    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/b6d1952e-df3d-4c13-ae6d-e34b3e957861/R1-4A.jpg?format=1500w",
+    "alt": "Hair campaign look by Anastasia Rose",
+    "order": 5,
+    "file": "005-image.json"
+  },
+  {
+    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/1d151cc0-9ba2-4bb1-9452-640ea0201a3d/2_web.jpg?format=1500w",
+    "alt": "Hair campaign look by Anastasia Rose",
+    "order": 6,
+    "file": "006-image.json"
+  },
+  {
+    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/0b8edb33-babc-4951-8736-46120b95928f/12_web.jpg?format=1500w",
+    "alt": "Hair campaign look by Anastasia Rose",
+    "order": 7,
+    "file": "007-image.json"
+  },
+  {
+    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/cfc407d6-c82e-48f8-8f5f-94225141676a/IMG_5499.jpg?format=1500w",
+    "alt": "Hair campaign look by Anastasia Rose",
+    "order": 8,
+    "file": "008-image.json"
+  },
+  {
+    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/1757599961626-H6NEXJEXZFBF8W5PFMKQ/IMG_1310.jpg?format=1500w",
+    "alt": "Hair campaign look by Anastasia Rose",
+    "order": 9,
+    "file": "009-image.json"
+  },
+  {
+    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/9b46cf3c-f4e6-41ea-9e93-db411c3ae8f8/2.png?format=1500w",
+    "alt": "Hair campaign look by Anastasia Rose",
+    "order": 10,
+    "file": "010-image.json"
+  },
+  {
+    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/5f472c6b-b25e-43b6-be0f-8cf734836974/10_web.jpg?format=1500w",
+    "alt": "Hair campaign look by Anastasia Rose",
+    "order": 11,
+    "file": "011-image.json"
+  },
+  {
+    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/1764930663629-1CEIKZAMCGYXK0D5HNVP/1DD6EF6B-3F3D-414C-8B2A-5077BC38F6D6.png?format=1500w",
+    "alt": "Hair campaign look by Anastasia Rose",
+    "order": 12,
+    "file": "012-image.json"
   }
 ]

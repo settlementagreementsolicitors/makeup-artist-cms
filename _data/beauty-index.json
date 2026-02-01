@@ -1,26 +1,98 @@
 [
   {
-    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/67b5e174-6484-47e5-a8ef-35b161258520/Vanguard+%2337+vol.11+c.jpg?format=1500w",
-    "alt": "Clean beauty makeup look",
+    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/dd969cd1-723f-40a8-95ef-3083ede5b5ac/edit+gold.jpg?format=1500w",
+    "alt": "Beauty makeup look by Anastasia Rose",
     "order": 1,
-    "file": "001-beauty-clean.json"
+    "file": "001-image.json"
+  },
+  {
+    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/e87fb9ea-2bff-4a74-bcd8-68d491d61232/Layer+Visibility.jpg?format=1500w",
+    "alt": "Beauty makeup look by Anastasia Rose",
+    "order": 2,
+    "file": "002-image.json"
+  },
+  {
+    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/20e058d1-9e67-42a6-acf0-1584be795466/_82A5750crop.jpg?format=1500w",
+    "alt": "Beauty makeup look by Anastasia Rose",
+    "order": 3,
+    "file": "003-image.json"
+  },
+  {
+    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/a0094dda-9605-4852-88ff-ef0cdd23e394/_82A5732.jpg?format=1500w",
+    "alt": "Beauty makeup look by Anastasia Rose",
+    "order": 4,
+    "file": "004-image.json"
+  },
+  {
+    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/f91b59ca-f459-4157-9e5a-b46e29d1a98f/_82A5473c.jpg?format=1500w",
+    "alt": "Beauty makeup look by Anastasia Rose",
+    "order": 5,
+    "file": "005-image.json"
+  },
+  {
+    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/d8a7caf3-6f02-47c5-9c59-a65a194c6510/_82A5678.jpg?format=1500w",
+    "alt": "Beauty makeup look by Anastasia Rose",
+    "order": 6,
+    "file": "006-image.json"
+  },
+  {
+    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/3cc13cf0-34de-45ff-b47a-258657be5d2e/_82A5830.jpg?format=1500w",
+    "alt": "Beauty makeup look by Anastasia Rose",
+    "order": 7,
+    "file": "007-image.json"
+  },
+  {
+    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/9b6c77b6-47d9-4443-b93f-f5b46f6a8815/edit+colour.jpg?format=1500w",
+    "alt": "Beauty makeup look by Anastasia Rose",
+    "order": 8,
+    "file": "008-image.json"
+  },
+  {
+    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/67b5e174-6484-47e5-a8ef-35b161258520/Vanguard+%2337+vol.11+c.jpg?format=1500w",
+    "alt": "Beauty makeup look by Anastasia Rose",
+    "order": 9,
+    "file": "009-image.json"
   },
   {
     "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/4a69e102-faba-420f-b277-995f5a333435/IMG_6897.jpg?format=1500w",
-    "alt": "Natural beauty makeup",
-    "order": 2,
-    "file": "002-beauty-natural.json"
+    "alt": "Beauty makeup look by Anastasia Rose",
+    "order": 10,
+    "file": "010-image.json"
   },
   {
     "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/21705e65-1ffb-434b-bc4c-02b59e1abe2b/IMG_5452.jpg?format=1500w",
-    "alt": "Glamour beauty makeup",
-    "order": 3,
-    "file": "003-beauty-glam.json"
+    "alt": "Beauty makeup look by Anastasia Rose",
+    "order": 11,
+    "file": "011-image.json"
   },
   {
     "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/24602d0c-331e-4ad8-a475-eaf43118bf37/1550297-R1-13-14A.jpg?format=1500w",
-    "alt": "Film beauty makeup",
-    "order": 4,
-    "file": "004-beauty-film.json"
+    "alt": "Beauty makeup look by Anastasia Rose",
+    "order": 12,
+    "file": "012-image.json"
+  },
+  {
+    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/8efb25a2-a370-49e8-8d5c-435709eaa6d2/1.png?format=1500w",
+    "alt": "Beauty makeup look by Anastasia Rose",
+    "order": 13,
+    "file": "013-image.json"
+  },
+  {
+    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/1757600088785-OO3YISADA6D5UPM05A0E/000053.jpg?format=1500w",
+    "alt": "Beauty makeup look by Anastasia Rose",
+    "order": 14,
+    "file": "014-image.json"
+  },
+  {
+    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/3b8164f6-0546-4686-8d42-ef3b483e327f/8_web.jpg?format=1500w",
+    "alt": "Beauty makeup look by Anastasia Rose",
+    "order": 15,
+    "file": "015-image.json"
+  },
+  {
+    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/3c2ce856-6d08-4ed0-b64c-bced2c1a5063/110_web.jpg?format=1500w",
+    "alt": "Beauty makeup look by Anastasia Rose",
+    "order": 16,
+    "file": "016-image.json"
   }
 ]

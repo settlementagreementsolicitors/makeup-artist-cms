@@ -1,20 +1,74 @@
 [
   {
-    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/3c2ce856-6d08-4ed0-b64c-bced2c1a5063/110_web.jpg?format=1500w",
-    "alt": "Fashion Week backstage",
+    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/1757600216490-9RS21IMAW75KX2XB9R45/IMG_1167.jpg?format=1500w",
+    "alt": "Fashion week look by Anastasia Rose",
     "order": 1,
-    "file": "001-fw-backstage.json"
+    "file": "001-image.json"
   },
   {
-    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/fd003b00-baaf-4a9c-97e7-da34ab671480/_82A2011.jpg?format=1500w",
-    "alt": "Fashion Week runway look",
+    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/1757691132542-1CARJ93VHWSYF8QARYXL/IMG_1207.jpg?format=1500w",
+    "alt": "Fashion week look by Anastasia Rose",
     "order": 2,
-    "file": "002-fw-runway.json"
+    "file": "002-image.json"
   },
   {
-    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/1757690369213-B3C9V0WO0F9JJE55CA6R/IMG_1160.jpg?format=1500w",
-    "alt": "London Fashion Week",
+    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/fd40569d-e3b5-472e-9590-1574a499d70d/000006.jpg?format=1500w",
+    "alt": "Fashion week look by Anastasia Rose",
     "order": 3,
-    "file": "003-fw-lfw.json"
+    "file": "003-image.json"
+  },
+  {
+    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/4eab9e9c-9990-45e6-b9d2-80f3865dd0c4/_82A1825.jpg?format=1500w",
+    "alt": "Fashion week look by Anastasia Rose",
+    "order": 4,
+    "file": "004-image.json"
+  },
+  {
+    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/069f08f7-d210-4c5f-887d-f8ef37be8606/_82A2004.jpg?format=1500w",
+    "alt": "Fashion week look by Anastasia Rose",
+    "order": 5,
+    "file": "005-image.json"
+  },
+  {
+    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/5c17452c-5ee1-46bf-b228-b675a6adf031/3.png?format=1500w",
+    "alt": "Fashion week look by Anastasia Rose",
+    "order": 6,
+    "file": "006-image.json"
+  },
+  {
+    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/64a23a06-4528-4ef9-81b5-e1f9127cb6ee/Maryanne+017.jpg?format=1500w",
+    "alt": "Fashion week look by Anastasia Rose",
+    "order": 7,
+    "file": "007-image.json"
+  },
+  {
+    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/9eb92ae3-0c16-43b8-94ba-eacaa7abc045/1_web.jpg?format=1500w",
+    "alt": "Fashion week look by Anastasia Rose",
+    "order": 8,
+    "file": "008-image.json"
+  },
+  {
+    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/6cfd14c8-424f-4dba-8d80-b50b1cc467ca/IMG_8042.jpeg?format=1500w",
+    "alt": "Fashion week look by Anastasia Rose",
+    "order": 9,
+    "file": "009-image.json"
+  },
+  {
+    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/534e55cc-25d9-41d1-9311-75a5d3e6483b/WEBSIZE+Elena_.jpg?format=1500w",
+    "alt": "Fashion week look by Anastasia Rose",
+    "order": 10,
+    "file": "010-image.json"
+  },
+  {
+    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/1762018451513-FIFAPXSAI8L5Z7KEH27E/000006.png?format=1500w",
+    "alt": "Fashion week look by Anastasia Rose",
+    "order": 11,
+    "file": "011-image.json"
+  },
+  {
+    "image": "https://images.squarespace-cdn.com/content/v1/67d9c4f1856c6609a7f43cd4/1ea0f4da-035f-47ce-b6b2-a6c5d765d8a5/Instagram+size2.jpg?format=1500w",
+    "alt": "Fashion week look by Anastasia Rose",
+    "order": 12,
+    "file": "012-image.json"
   }
 ]
