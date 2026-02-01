@@ -466,46 +466,19 @@
                 return portfolioCache[category];
             }
 
-            const folder = categories[category];
-            const images = [];
-
             try {
-                // Fetch the list of JSON files in the category folder
-                // In production, we'll need to generate an index file or use a build step
-                // For now, we try to fetch individual files
-                const response = await fetch(`/${folder}/`);
-
-                if (!response.ok) {
-                    // Fallback: try to load from a generated index
-                    const indexResponse = await fetch(`/${folder}/index.json`);
-                    if (indexResponse.ok) {
-                        const data = await indexResponse.json();
-                        portfolioCache[category] = data.images || [];
-                        return portfolioCache[category];
-                    }
-                    return [];
+                // Fetch from the pre-built index file
+                const response = await fetch(`/_data/${category}-index.json`);
+                if (response.ok) {
+                    const data = await response.json();
+                    portfolioCache[category] = data;
+                    return data;
                 }
-
-                // Parse directory listing (this won't work on most static hosts)
-                // The proper solution is to generate an index during build
-                return [];
             } catch (error) {
-                console.log(`Loading ${category} from individual files...`);
-
-                // Try loading a pre-built index file
-                try {
-                    const indexResponse = await fetch(`/_data/${category}-index.json`);
-                    if (indexResponse.ok) {
-                        const data = await indexResponse.json();
-                        portfolioCache[category] = data;
-                        return data;
-                    }
-                } catch (e) {
-                    // Index doesn't exist yet
-                }
-
-                return [];
+                console.log(`Error loading ${category}:`, error);
             }
+
+            return [];
         }
 
         // Render a portfolio grid
