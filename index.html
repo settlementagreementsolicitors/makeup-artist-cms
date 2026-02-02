@@ -6,6 +6,24 @@
     <meta name="description" content="Anastasia Rose - Makeup Artist specialising in fashion, beauty, celebrity and editorial work.">
     <title>ANASTASIA ROSE | Makeup Artist</title>
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💄</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💄</text></svg>">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Anastasia Rose | Makeup Artist">
+    <meta property="og:description" content="London-based makeup artist specialising in fashion, beauty, celebrity and editorial work. Available worldwide.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.makeup-artist.com">
+    <meta property="og:image" content="https://www.makeup-artist.com/images/og-image.jpg">
+    <meta property="og:site_name" content="Anastasia Rose Makeup">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Anastasia Rose | Makeup Artist">
+    <meta name="twitter:description" content="London-based makeup artist specialising in fashion, beauty, celebrity and editorial work.">
+    <meta name="twitter:image" content="https://www.makeup-artist.com/images/og-image.jpg">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
@@ -58,6 +76,38 @@
             display: inline;
         }
 
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 10px;
+            background: none;
+            border: none;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background: #000000;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
         nav {
             display: flex;
             gap: 35px;
@@ -91,6 +141,7 @@
             max-width: 1400px;
             margin: 0 auto;
             padding: 40px 40px 80px;
+            min-height: calc(100vh - 200px);
         }
 
         /* Portfolio Grid */
@@ -106,6 +157,14 @@
             overflow: hidden;
             background: #f5f5f5;
             aspect-ratio: 3/4;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .portfolio-item.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .portfolio-item img {
@@ -113,11 +172,53 @@
             height: 100%;
             object-fit: cover;
             display: block;
-            transition: transform 0.4s ease;
+            transition: transform 0.4s ease, filter 0.4s ease;
+        }
+
+        /* Image loading placeholder */
+        .portfolio-item img.loading {
+            filter: blur(10px);
+        }
+
+        .portfolio-item img.loaded {
+            filter: blur(0);
+        }
+
+        /* Hover overlay */
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.4s ease;
+            pointer-events: none;
+        }
+
+        .portfolio-overlay svg {
+            width: 40px;
+            height: 40px;
+            color: white;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: opacity 0.3s ease, transform 0.3s ease;
         }
 
         .portfolio-item:hover img {
             transform: scale(1.05);
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .portfolio-item:hover .portfolio-overlay svg {
+            opacity: 1;
+            transform: scale(1);
         }
 
         /* Loading state */
@@ -129,9 +230,17 @@
         }
 
         .portfolio-grid.loading::after {
-            content: "Loading...";
-            font-size: 14px;
-            color: #999;
+            content: "";
+            width: 40px;
+            height: 40px;
+            border: 2px solid #e8e8e8;
+            border-top-color: #000;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
         }
 
         /* Empty state */
@@ -282,6 +391,101 @@
             right: 20px;
         }
 
+        /* Lightbox counter */
+        .lightbox-counter {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 14px;
+            color: #666;
+            letter-spacing: 1px;
+        }
+
+        /* Footer */
+        footer {
+            background: #fafafa;
+            border-top: 1px solid #e8e8e8;
+            padding: 40px;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-logo {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 18px;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            color: #000000;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .footer-links a {
+            font-size: 12px;
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #000;
+        }
+
+        .footer-copyright {
+            font-size: 12px;
+            color: #999;
+        }
+
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: #000;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            background: #333;
+        }
+
+        .back-to-top svg {
+            width: 20px;
+            height: 20px;
+        }
+
         /* Page visibility */
         .page {
             display: none;
@@ -289,6 +493,23 @@
 
         .page.active {
             display: block;
+        }
+
+        /* Fade-in animation for page content */
+        .page.active .about-container,
+        .page.active .contact-info {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Responsive */
@@ -309,14 +530,17 @@
             }
 
             .header-content {
-                flex-direction: column;
-                gap: 20px;
-                text-align: center;
+                flex-wrap: wrap;
+                gap: 0;
+            }
+
+            .hamburger {
+                display: flex;
             }
 
             .logo {
-                text-align: center;
-                width: 100%;
+                text-align: left;
+                flex: 1;
             }
 
             .logo-divider {
@@ -331,13 +555,30 @@
             }
 
             nav {
-                gap: 20px;
-                flex-wrap: wrap;
-                justify-content: center;
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                gap: 0;
+                padding-top: 20px;
+                margin-top: 20px;
+                border-top: 1px solid #e8e8e8;
+            }
+
+            nav.active {
+                display: flex;
             }
 
             nav a {
-                font-size: 12px;
+                font-size: 14px;
+                padding: 15px 0;
+                border-bottom: 1px solid #f0f0f0;
+                width: 100%;
+                text-align: center;
+            }
+
+            nav a:last-child {
+                border-bottom: none;
+                padding-top: 20px;
             }
 
             main {
@@ -354,10 +595,35 @@
                 padding: 10px;
             }
 
+            .lightbox-prev {
+                left: 10px;
+            }
+
+            .lightbox-next {
+                right: 10px;
+            }
+
             .lightbox-close {
                 font-size: 30px;
                 width: 40px;
                 height: 40px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
             }
         }
 
@@ -373,7 +639,12 @@
     <header>
         <div class="header-content">
             <a href="#" class="logo" onclick="showPage('editorial'); return false;">ANASTASIA ROSE <span class="logo-divider">|</span> <span class="logo-subtitle">Makeup Artist</span></a>
-            <nav>
+            <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav id="main-nav">
                 <a href="#" data-page="editorial" onclick="showPage('editorial'); return false;">Editorial</a>
                 <a href="#" data-page="beauty" onclick="showPage('beauty'); return false;">Beauty</a>
                 <a href="#" data-page="hair-campaigns" onclick="showPage('hair-campaigns'); return false;">Hair Campaigns</a>
@@ -457,6 +728,22 @@
         </div>
     </main>
 
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">ANASTASIA ROSE</div>
+            <div class="footer-links">
+                <a href="#" onclick="showPage('editorial'); return false;">Portfolio</a>
+                <a href="#" onclick="showPage('about'); return false;">About</a>
+                <a href="#" onclick="showPage('contact'); return false;">Contact</a>
+                <a href="https://instagram.com/anastasiarose_mua" target="_blank" rel="noopener noreferrer">Instagram</a>
+            </div>
+            <div class="footer-copyright">
+                &copy; 2024 Anastasia Rose. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
     <!-- Lightbox -->
     <div class="lightbox" id="lightbox">
         <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
@@ -465,13 +752,23 @@
         <div class="lightbox-content">
             <img id="lightbox-img" src="" alt="">
         </div>
+        <div class="lightbox-counter" id="lightbox-counter"></div>
     </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top" onclick="scrollToTop()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
 
     <script>
         // Portfolio data cache
         const portfolioCache = {};
         let currentImages = [];
         let currentIndex = 0;
+        let touchStartX = 0;
+        let touchEndX = 0;
 
         // Category to folder mapping
         const categories = {
@@ -481,6 +778,55 @@
             'fashion-week': '_data/fashion-week',
             'bridal': '_data/bridal'
         };
+
+        // Hamburger menu toggle
+        function toggleMenu() {
+            const nav = document.getElementById('main-nav');
+            const hamburger = document.querySelector('.hamburger');
+            nav.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+
+        // Close menu when clicking a link
+        document.querySelectorAll('#main-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                const nav = document.getElementById('main-nav');
+                const hamburger = document.querySelector('.hamburger');
+                if (window.innerWidth <= 768) {
+                    nav.classList.remove('active');
+                    hamburger.classList.remove('active');
+                }
+            });
+        });
+
+        // Back to top functionality
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Show/hide back to top button based on scroll
+        window.addEventListener('scroll', () => {
+            const backToTop = document.getElementById('back-to-top');
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
 
         // Load images for a category from CMS JSON files
         async function loadCategoryImages(category) {
@@ -536,7 +882,7 @@
             // Sort by order field
             images.sort((a, b) => (a.order || 0) - (b.order || 0));
 
-            // Render images
+            // Render images with staggered animation
             images.forEach((img, index) => {
                 const item = document.createElement('div');
                 item.className = 'portfolio-item';
@@ -544,9 +890,24 @@
                 // Handle both CMS-uploaded images and external URLs
                 const imagePath = img.image.startsWith('http') ? img.image : img.image;
 
-                item.innerHTML = `<img src="${imagePath}" alt="${img.alt || 'Makeup work by Anastasia Rose'}" loading="lazy">`;
+                item.innerHTML = `
+                    <img src="${imagePath}" alt="${img.alt || 'Makeup work by Anastasia Rose'}" loading="lazy" class="loading" onload="this.classList.remove('loading'); this.classList.add('loaded');">
+                    <div class="portfolio-overlay">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            <line x1="11" y1="8" x2="11" y2="14"></line>
+                            <line x1="8" y1="11" x2="14" y2="11"></line>
+                        </svg>
+                    </div>
+                `;
                 item.onclick = () => openLightbox(images, index);
                 grid.appendChild(item);
+
+                // Observe for fade-in animation with stagger
+                setTimeout(() => {
+                    observer.observe(item);
+                }, index * 50);
             });
         }
 
@@ -586,14 +947,17 @@
         function openLightbox(images, index) {
             currentImages = images;
             currentIndex = index;
-
-            const img = images[index];
-            const imagePath = img.image.startsWith('http') ? img.image : img.image;
-
-            document.getElementById('lightbox-img').src = imagePath;
-            document.getElementById('lightbox-img').alt = img.alt || 'Makeup work by Anastasia Rose';
+            updateLightboxImage();
             document.getElementById('lightbox').classList.add('active');
             document.body.style.overflow = 'hidden';
+        }
+
+        function updateLightboxImage() {
+            const img = currentImages[currentIndex];
+            const imagePath = img.image.startsWith('http') ? img.image : img.image;
+            document.getElementById('lightbox-img').src = imagePath;
+            document.getElementById('lightbox-img').alt = img.alt || 'Makeup work by Anastasia Rose';
+            document.getElementById('lightbox-counter').textContent = `${currentIndex + 1} / ${currentImages.length}`;
         }
 
         function closeLightbox() {
@@ -605,12 +969,29 @@
             currentIndex += direction;
             if (currentIndex < 0) currentIndex = currentImages.length - 1;
             if (currentIndex >= currentImages.length) currentIndex = 0;
+            updateLightboxImage();
+        }
 
-            const img = currentImages[currentIndex];
-            const imagePath = img.image.startsWith('http') ? img.image : img.image;
+        // Touch/swipe gestures for lightbox
+        document.getElementById('lightbox').addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
 
-            document.getElementById('lightbox-img').src = imagePath;
-            document.getElementById('lightbox-img').alt = img.alt || 'Makeup work by Anastasia Rose';
+        document.getElementById('lightbox').addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    navigateImage(1); // Swipe left - next image
+                } else {
+                    navigateImage(-1); // Swipe right - previous image
+                }
+            }
         }
 
         // Keyboard navigation
