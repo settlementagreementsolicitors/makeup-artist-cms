@@ -53,6 +53,11 @@
             color: #000000;
         }
 
+        .logo-divider,
+        .logo-subtitle {
+            display: inline;
+        }
+
         nav {
             display: flex;
             gap: 35px;
@@ -314,6 +319,17 @@
                 width: 100%;
             }
 
+            .logo-divider {
+                display: none;
+            }
+
+            .logo-subtitle {
+                display: block;
+                font-size: 14px;
+                letter-spacing: 2px;
+                margin-top: 5px;
+            }
+
             nav {
                 gap: 20px;
                 flex-wrap: wrap;
@@ -356,7 +372,7 @@
     <!-- Header -->
     <header>
         <div class="header-content">
-            <a href="#" class="logo" onclick="showPage('editorial'); return false;">ANASTASIA ROSE | Makeup Artist</a>
+            <a href="#" class="logo" onclick="showPage('editorial'); return false;">ANASTASIA ROSE <span class="logo-divider">|</span> <span class="logo-subtitle">Makeup Artist</span></a>
             <nav>
                 <a href="#" data-page="editorial" onclick="showPage('editorial'); return false;">Editorial</a>
                 <a href="#" data-page="beauty" onclick="showPage('beauty'); return false;">Beauty</a>
