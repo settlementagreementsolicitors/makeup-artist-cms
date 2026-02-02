@@ -341,6 +341,12 @@
             max-height: 90vh;
             object-fit: contain;
             display: block;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .lightbox-content img.transitioning {
+            opacity: 0;
+            transform: scale(0.95);
         }
 
         .lightbox-close {
@@ -952,12 +958,34 @@
             document.body.style.overflow = 'hidden';
         }
 
-        function updateLightboxImage() {
+        function updateLightboxImage(animate = false) {
+            const lightboxImg = document.getElementById('lightbox-img');
             const img = currentImages[currentIndex];
             const imagePath = img.image.startsWith('http') ? img.image : img.image;
-            document.getElementById('lightbox-img').src = imagePath;
-            document.getElementById('lightbox-img').alt = img.alt || 'Makeup work by Anastasia Rose';
-            document.getElementById('lightbox-counter').textContent = `${currentIndex + 1} / ${currentImages.length}`;
+
+            if (animate) {
+                // Fade out
+                lightboxImg.classList.add('transitioning');
+
+                setTimeout(() => {
+                    lightboxImg.src = imagePath;
+                    lightboxImg.alt = img.alt || 'Makeup work by Anastasia Rose';
+                    document.getElementById('lightbox-counter').textContent = `${currentIndex + 1} / ${currentImages.length}`;
+
+                    // Fade in after image loads
+                    lightboxImg.onload = () => {
+                        lightboxImg.classList.remove('transitioning');
+                    };
+                    // Fallback in case onload doesn't fire (cached image)
+                    setTimeout(() => {
+                        lightboxImg.classList.remove('transitioning');
+                    }, 50);
+                }, 150);
+            } else {
+                lightboxImg.src = imagePath;
+                lightboxImg.alt = img.alt || 'Makeup work by Anastasia Rose';
+                document.getElementById('lightbox-counter').textContent = `${currentIndex + 1} / ${currentImages.length}`;
+            }
         }
 
         function closeLightbox() {
@@ -965,11 +993,19 @@
             document.body.style.overflow = 'auto';
         }
 
+        let isNavigating = false;
         function navigateImage(direction) {
+            if (isNavigating) return; // Prevent rapid clicks
+            isNavigating = true;
+
             currentIndex += direction;
             if (currentIndex < 0) currentIndex = currentImages.length - 1;
             if (currentIndex >= currentImages.length) currentIndex = 0;
-            updateLightboxImage();
+            updateLightboxImage(true);
+
+            setTimeout(() => {
+                isNavigating = false;
+            }, 300);
         }
 
         // Touch/swipe gestures for lightbox
