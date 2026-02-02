@@ -144,6 +144,16 @@
             min-height: calc(100vh - 200px);
         }
 
+        /* Section Title */
+        .section-title {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 32px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
         /* Portfolio Grid */
         .portfolio-grid {
             display: grid;
@@ -596,9 +606,37 @@
                 gap: 15px;
             }
 
+            .section-title {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+
+            .lightbox {
+                padding: 0;
+            }
+
+            .lightbox-content {
+                max-width: 100%;
+                max-height: 100%;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .lightbox-content img {
+                max-width: 100%;
+                max-height: 85vh;
+                width: auto;
+                height: auto;
+            }
+
             .lightbox-nav {
                 font-size: 40px;
-                padding: 10px;
+                padding: 15px;
+                background: rgba(255, 255, 255, 0.8);
+                border-radius: 50%;
             }
 
             .lightbox-prev {
@@ -611,8 +649,16 @@
 
             .lightbox-close {
                 font-size: 30px;
-                width: 40px;
-                height: 40px;
+                width: 44px;
+                height: 44px;
+                top: 15px;
+                right: 15px;
+                background: rgba(255, 255, 255, 0.8);
+                border-radius: 50%;
+            }
+
+            .lightbox-counter {
+                bottom: 30px;
             }
 
             .footer-content {
@@ -671,26 +717,31 @@
     <main>
         <!-- Editorial Page (Default) -->
         <div id="editorial" class="page active">
+            <h1 class="section-title">Editorial</h1>
             <div class="portfolio-grid loading" id="editorial-grid"></div>
         </div>
 
         <!-- Beauty Page -->
         <div id="beauty" class="page">
+            <h1 class="section-title">Beauty</h1>
             <div class="portfolio-grid loading" id="beauty-grid"></div>
         </div>
 
         <!-- Hair Campaigns Page -->
         <div id="hair-campaigns" class="page">
+            <h1 class="section-title">Hair Campaigns</h1>
             <div class="portfolio-grid loading" id="hair-campaigns-grid"></div>
         </div>
 
         <!-- Fashion Week Page -->
         <div id="fashion-week" class="page">
+            <h1 class="section-title">Fashion Week</h1>
             <div class="portfolio-grid loading" id="fashion-week-grid"></div>
         </div>
 
         <!-- Bridal Page -->
         <div id="bridal" class="page">
+            <h1 class="section-title">Bridal</h1>
             <div class="portfolio-grid loading" id="bridal-grid"></div>
         </div>
 
