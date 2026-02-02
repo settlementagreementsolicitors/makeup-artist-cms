@@ -715,14 +715,14 @@
 
     <!-- Main Content -->
     <main>
-        <!-- Editorial Page (Default) -->
-        <div id="editorial" class="page active">
+        <!-- Editorial Page -->
+        <div id="editorial" class="page">
             <h1 class="section-title">Editorial</h1>
             <div class="portfolio-grid loading" id="editorial-grid"></div>
         </div>
 
-        <!-- Beauty Page -->
-        <div id="beauty" class="page">
+        <!-- Beauty Page (Default) -->
+        <div id="beauty" class="page active">
             <h1 class="section-title">Beauty</h1>
             <div class="portfolio-grid loading" id="beauty-grid"></div>
         </div>
@@ -1108,9 +1108,9 @@
             });
         }
 
-        // Initialize - load editorial by default
+        // Initialize - load beauty by default
         document.addEventListener('DOMContentLoaded', () => {
-            showPage('editorial');
+            showPage('beauty');
         });
     </script>
 </body>
